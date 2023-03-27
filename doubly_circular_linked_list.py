@@ -146,4 +146,4 @@ class Lista:
 #a.print_list()
 #a.print_reverse()
 #a.free_memory()
-#a.print_list
+#a.print_list()
