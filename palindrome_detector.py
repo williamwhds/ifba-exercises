@@ -4,9 +4,9 @@ reverse = list(reversed(string))
 
 palindromo = True
 
-count = 0
-for i in string:
-    if not string[count] == reverse[count]:
+
+for index, i in enumerate(string):
+    if not string[index] == reverse[index]:
         palindromo = False
 
 if palindromo:
