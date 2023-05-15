@@ -1,6 +1,6 @@
 #
 #
-#	Algoritmode lista duplamente encadeada adaptado para funcionalidade com sublista.py
+#	Algoritmo de lista duplamente encadeada adaptado para funcionalidade com sublista.py
 #
 #
 
