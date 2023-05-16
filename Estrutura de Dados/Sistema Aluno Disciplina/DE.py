@@ -1,7 +1,5 @@
 #   Algoritmo de Lista Duplamente Encadeada adaptado para funcionalidade com sistema_aluno_disciplina.py
 
-#TESTAR ADICIONAR E REMOVER. REFAZER O RESTO
-
 class No_Disciplina:
     '''Este nó representa uma disciplina.'''
     def __init__(self, nome_disciplina):
@@ -84,21 +82,64 @@ class Lista_DE:
                 return
             no_atual = no_atual.proximo
 
-    def buscar(self, valor):
+    def disciplina_existe(self, nome_disciplina):
         no_atual = self.cabeca
         while no_atual is not None:
-            if no_atual.valor == valor:
+            if no_atual.nome_disciplina == nome_disciplina:
                 return True
             no_atual = no_atual.proximo
         return False
 
-    def imprimir(self):
-        lista_valores = []
+    def aluno_existe(self, n_matricula):
         no_atual = self.cabeca
         while no_atual is not None:
-            lista_valores.append(no_atual.valor)
+            if no_atual.matricula == n_matricula:
+                return True
             no_atual = no_atual.proximo
-        print(lista_valores)
+        return False
+
+    def imprimir_disciplinas(self):
+        lista_disciplinas = []
+        no_atual = self.cabeca
+        while no_atual is not None:
+            lista_disciplinas.append(no_atual.nome_disciplina)
+            no_atual = no_atual.proximo
+        print(lista_disciplinas)
+
+    def imprimir_alunos(self):
+        lista_alunos = []
+        no_atual = self.cabeca
+        while no_atual is not None:
+            lista_alunos.append(no_atual.nome_aluno)
+            no_atual = no_atual.proximo
+        print(lista_alunos)
+
 
 if __name__ == "__main__":
     alunos = Lista_DE()
+
+    alunos.adicionar_no_aluno("João", "1")
+    alunos.adicionar_no_aluno("Maria", "2")
+
+    alunos.imprimir_alunos() # ['João', 'Maria']
+
+    alunos.remover_aluno("1")
+
+    alunos.imprimir_alunos() # ['Maria']
+
+    print(alunos.aluno_existe("2")) # True
+    print(alunos.aluno_existe("1")) # False
+
+    disciplina = Lista_DE()
+
+    disciplina.adicionar_no_disciplina("Estrutura de Dados")
+    disciplina.adicionar_no_disciplina("Programação Orientada a Objetos")
+
+    disciplina.imprimir_disciplinas() # ['Estrutura de Dados', 'Programação Orientada a Objetos']
+    
+    disciplina.remover_disciplina("Estrutura de Dados")
+    
+    disciplina.imprimir_disciplinas() # ['Programação Orientada a Objetos']
+    
+    print(disciplina.disciplina_existe("Programação Orientada a Objetos"))  # True
+    print(disciplina.disciplina_existe("Estrutura de Dados"))               # False
