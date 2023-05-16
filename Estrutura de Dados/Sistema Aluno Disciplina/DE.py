@@ -23,6 +23,9 @@ class Lista_DE:
         self.tamanho = 0
 
     def adicionar_no_disciplina(self, nome_disciplina):
+        if self.disciplina_existe(nome_disciplina):
+            print(f'A disciplina de {nome_disciplina} já existe.')
+            return
         novo_no = No_Disciplina(nome_disciplina)
         if self.cabeca is None:
             self.cabeca = novo_no
@@ -35,6 +38,9 @@ class Lista_DE:
         self.tamanho += 1
 
     def adicionar_no_aluno(self, nome_aluno, n_matricula):
+        if self.aluno_existe(n_matricula):
+            print(f'Aluno com nº "{n_matricula}" já existe.')
+            return
         novo_no = No_Alunos(nome_aluno, n_matricula)
         if self.cabeca is None:
             self.cabeca = novo_no
@@ -120,6 +126,7 @@ if __name__ == "__main__":
 
     alunos.adicionar_no_aluno("João", "1")
     alunos.adicionar_no_aluno("Maria", "2")
+    alunos.adicionar_no_aluno("Mario", "2") # Aluno com nº "2" já existe.
 
     alunos.imprimir_alunos() # ['João', 'Maria']
 
@@ -134,12 +141,13 @@ if __name__ == "__main__":
 
     disciplina.adicionar_no_disciplina("Estrutura de Dados")
     disciplina.adicionar_no_disciplina("Programação Orientada a Objetos")
+    disciplina.adicionar_no_disciplina("Estrutura de Dados") # A disciplina de Estrutura de Dados já existe.
 
     disciplina.imprimir_disciplinas() # ['Estrutura de Dados', 'Programação Orientada a Objetos']
-    
+
     disciplina.remover_disciplina("Estrutura de Dados")
-    
+
     disciplina.imprimir_disciplinas() # ['Programação Orientada a Objetos']
-    
+
     print(disciplina.disciplina_existe("Programação Orientada a Objetos"))  # True
     print(disciplina.disciplina_existe("Estrutura de Dados"))               # False
