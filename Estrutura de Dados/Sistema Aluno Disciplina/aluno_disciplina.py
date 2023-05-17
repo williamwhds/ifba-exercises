@@ -26,5 +26,29 @@ A classe Admin terá como métodos:
     - Imprimir lista de disciplinas;
     - Imprimir lista de alunos;
     - Imprimir lista de alunos em disciplina;
-    - Imprimir lista de disciplinas de um aluno (talvez);
+    - Imprimir lista de disciplinas de um aluno (Iterar sobre todas as disciplinas);
 '''
+
+from DE import *
+
+class Admin:
+    '''Esta classe é utilizada para administrar alunos e disciplinas.'''
+    def __init__(self):
+        self.lista_disciplinas = Lista_DE()
+        self.lista_alunos = Lista_DE()
+
+    def adicionar_disciplina(self, nome_disciplina):
+        '''Adiciona uma disciplina na lista de disciplinas.'''
+        self.lista_disciplinas.adicionar_no_disciplina(nome_disciplina)
+    
+    def remover_disciplina(self, nome_disciplina):
+        '''Remove uma disciplina da lista de disciplinas.'''
+        self.lista_disciplinas.remover_disciplina(nome_disciplina)
+
+    def adicionar_aluno(self, nome, n_matricula):
+        '''Adiciona um aluno na lista de alunos.'''
+        self.lista_alunos.adicionar_no_aluno(nome, n_matricula)
+
+    def remover_aluno(self, n_matricula):
+        '''Remove um aluno da lista de alunos.'''
+        self.lista_alunos.remover_aluno(n_matricula)

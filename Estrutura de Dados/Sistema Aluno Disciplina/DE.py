@@ -1,10 +1,11 @@
 #   Algoritmo de Lista Duplamente Encadeada adaptado para funcionalidade com sistema_aluno_disciplina.py
+from SE import * # Importa a classe de lista simplesmente encadeada
 
 class No_Disciplina:
     '''Este nó representa uma disciplina.'''
     def __init__(self, nome_disciplina):
         self.nome_disciplina = nome_disciplina
-        self.ponteiro = None
+        self.ponteiro = Lista()
         self.anterior = None
         self.proximo = None
 
@@ -23,6 +24,7 @@ class Lista_DE:
         self.tamanho = 0
 
     def adicionar_no_disciplina(self, nome_disciplina):
+        '''Adiciona um nó de disciplina à lista.'''
         if self.disciplina_existe(nome_disciplina):
             print(f'A disciplina de {nome_disciplina} já existe.')
             return
@@ -38,6 +40,7 @@ class Lista_DE:
         self.tamanho += 1
 
     def adicionar_no_aluno(self, nome_aluno, n_matricula):
+        '''Adiciona um nó de aluno à lista.'''
         if self.aluno_existe(n_matricula):
             print(f'Aluno com nº "{n_matricula}" já existe.')
             return
@@ -53,6 +56,7 @@ class Lista_DE:
         self.tamanho += 1
 
     def remover_aluno(self, n_matricula):
+        '''Remove um nó de aluno da lista.'''
         if self.cabeca is None:
             return
         if self.cabeca.matricula == n_matricula:
@@ -71,6 +75,7 @@ class Lista_DE:
             no_atual = no_atual.proximo
 
     def remover_disciplina(self, n_disciplina):
+        '''Remove um nó de disciplina da lista.'''
         if self.cabeca is None:
             return
         if self.cabeca.nome_disciplina == n_disciplina:
@@ -89,6 +94,7 @@ class Lista_DE:
             no_atual = no_atual.proximo
 
     def disciplina_existe(self, nome_disciplina):
+        '''Verifica se uma disciplina existe na lista. Retorna True se sim, False se não.'''
         no_atual = self.cabeca
         while no_atual is not None:
             if no_atual.nome_disciplina == nome_disciplina:
@@ -97,6 +103,7 @@ class Lista_DE:
         return False
 
     def aluno_existe(self, n_matricula):
+        '''Verifica se um aluno existe na lista. Retorna True se sim, False se não.'''
         no_atual = self.cabeca
         while no_atual is not None:
             if no_atual.matricula == n_matricula:
@@ -105,6 +112,7 @@ class Lista_DE:
         return False
 
     def imprimir_disciplinas(self):
+        '''Imprime as disciplinas da lista.'''
         lista_disciplinas = []
         no_atual = self.cabeca
         while no_atual is not None:
@@ -113,6 +121,7 @@ class Lista_DE:
         print(lista_disciplinas)
 
     def imprimir_alunos(self):
+        '''Imprime os alunos da lista.'''
         lista_alunos = []
         no_atual = self.cabeca
         while no_atual is not None:
@@ -120,6 +129,23 @@ class Lista_DE:
             no_atual = no_atual.proximo
         print(lista_alunos)
 
+    def buscar_disciplina(self, nome_disciplina):
+        '''Busca uma disciplina na lista e retorna o nó.'''
+        no_atual = self.cabeca
+        while no_atual is not None:
+            if no_atual.nome_disciplina == nome_disciplina:
+                return no_atual
+            no_atual = no_atual.proximo
+        return None
+    
+    def buscar_aluno(self, n_matricula):
+        '''Busca um aluno na lista e retorna o nó.'''
+        no_atual = self.cabeca
+        while no_atual is not None:
+            if no_atual.matricula == n_matricula:
+                return no_atual
+            no_atual = no_atual.proximo
+        return None
 
 if __name__ == "__main__":
     alunos = Lista_DE()
