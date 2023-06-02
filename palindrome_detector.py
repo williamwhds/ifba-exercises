@@ -1,6 +1,6 @@
 palavra = input("Insira uma palavra ->")
 string = palavra.lower()
-reverse = list(reversed(string))
+reverse = list(reversed(string)) # reverse = string[::-1] também funciona
 
 palindromo = True
 
