@@ -74,6 +74,8 @@ if __name__ == "__main__":
         print("8. Buscar nó na lista")
         print("9. Sair")
 
+        _input = input("->")
+
         if _input == "1":
             adm.adicionar_no_arvore(int(input("Insira o valor do nó ->")))
         if _input == "2":
@@ -90,7 +92,6 @@ if __name__ == "__main__":
             adm.remover_no_lista(int(input("Insira o valor do nó ->")), int(input("Insira o valor do nó da lista ->")))
         if _input == "8":
             print(adm.buscar_no_lista(int(input("Insira o valor do nó ->")), int(input("Insira o valor do nó da lista ->"))))
-        _input = input("->")
 
     '''
     #Testes da árvore binária
