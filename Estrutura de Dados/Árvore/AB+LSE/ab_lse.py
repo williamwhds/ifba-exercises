@@ -39,24 +39,35 @@ class Admin:
 
     def imprimir_lista(self, no):
         '''Imprime os valores da lista. Recebe como parâmetro o nó da árvore.'''
-        no = self.buscar_no_arvore(no)
-        no.lista.imprimir()
+        try:
+            no = self.buscar_no_arvore(no)
+            no.lista.imprimir()
+        except:
+            print("Nó não encontrado.")
 
     def adicionar_no_lista(self, no, valor):
         '''Adiciona um nó à lista. Recebe como parâmetro o nó da árvore.'''
-        no = self.buscar_no_arvore(no)
-        no.lista.adicionar(valor)
+        try:
+            no = self.buscar_no_arvore(no)
+            no.lista.adicionar(valor)
+        except:
+            print("Nó não encontrado.")
 
     def remover_no_lista(self, no, valor):
         '''Remove um nó da lista. Recebe como parâmetro o nó da árvore.'''
-        no = self.buscar_no_arvore(no)
-        no.lista.remover(valor)
+        try:
+            no = self.buscar_no_arvore(no)
+            no.lista.remover(valor)
+        except:
+            print("Nó não encontrado.")
 
     def buscar_no_lista(self, no, valor):
         '''Retorna True se o valor estiver na lista, False caso contrário. Recebe como parâmetro o nó da árvore.'''
-        no = self.buscar_no_arvore(no)
-        return no.lista.buscar(valor)
-
+        try:
+            no = self.buscar_no_arvore(no)
+            return no.lista.buscar(valor)
+        except:
+            print("Nó não encontrado.")
 
 if __name__ == "__main__":
     adm = Admin()
