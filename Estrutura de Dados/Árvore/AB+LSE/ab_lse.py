@@ -61,6 +61,38 @@ class Admin:
 if __name__ == "__main__":
     adm = Admin()
 
+    _input = ""
+
+    while _input != "9": # Menu
+        print("1. Adicionar nó à árvore")
+        print("2. Remover nó da árvore")
+        print("3. Buscar nó na árvore")
+        print("4. Imprimir árvore")
+        print("5. Imprimir lista")
+        print("6. Adicionar nó à lista")
+        print("7. Remover nó da lista")
+        print("8. Buscar nó na lista")
+        print("9. Sair")
+
+        if _input == "1":
+            adm.adicionar_no_arvore(int(input("Insira o valor do nó ->")))
+        if _input == "2":
+            adm.remover_no_arvore(int(input("Insira o valor do nó ->")))
+        if _input == "3":
+            print(adm.buscar_no_arvore(int(input("Insira o valor do nó ->"))))
+        if _input == "4":
+            adm.imprimir_arvore()
+        if _input == "5":
+            adm.imprimir_lista(int(input("Insira o valor do nó ->")))
+        if _input == "6":
+            adm.adicionar_no_lista(int(input("Insira o valor do nó ->")), int(input("Insira o valor do nó da lista ->")))
+        if _input == "7":
+            adm.remover_no_lista(int(input("Insira o valor do nó ->")), int(input("Insira o valor do nó da lista ->")))
+        if _input == "8":
+            print(adm.buscar_no_lista(int(input("Insira o valor do nó ->")), int(input("Insira o valor do nó da lista ->"))))
+        _input = input("->")
+
+    '''
     #Testes da árvore binária
 
     adicionar = [10, 5, 15, 3, 7, 12, 17, 1, 4, 6, 8, 11, 13, 16, 18]
@@ -91,3 +123,4 @@ if __name__ == "__main__":
 
     adm.adicionar_no_lista(18, 1)
     adm.imprimir_lista(18) # [1]
+    '''
