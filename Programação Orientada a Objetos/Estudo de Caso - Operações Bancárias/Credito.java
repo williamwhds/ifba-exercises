@@ -1,10 +1,10 @@
 public class Credito extends Operacao {
     public Credito(double valor) {
-        super.valor = valor;
+        super.setValor(valor);
     }
 
     @Override
     public double operar() {
-        return super.valor;
+        return super.getValor();
     }
 }
