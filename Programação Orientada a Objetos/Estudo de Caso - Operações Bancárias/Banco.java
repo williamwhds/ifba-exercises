@@ -33,7 +33,7 @@ public class Banco {
     }
 
     public double getSaldo(String nome_correntista) {
-        return getCorrentista(nome_correntista).getContaCorrente().getSaldoAtual();
+        return getCorrentista(nome_correntista).getContaCorrente().getSaldo();
     }
 
     public void transferir(String nome_correntista_origem, String nome_correntista_destino, double valor) {
