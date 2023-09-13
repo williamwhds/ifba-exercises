@@ -7,4 +7,11 @@ public class Correntista {
         this.conta = conta;
     }
     
+    public ContaCorrente getConta() {
+        return conta;
+    }
+
+    public String getNome() {
+        return nome;
+    }
 }

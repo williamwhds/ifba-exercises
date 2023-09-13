@@ -1,6 +1,6 @@
 public class Programa {
     public static void main (String[] args){
-        Funcionario f1 = new Funcionario("Zé", 25, 44);
+        Funcionario f1 = new Funcionario("Zé", 25d, 44d);
 
         f1.numRG = "12345678";
         f1.cpf = "123456789101";

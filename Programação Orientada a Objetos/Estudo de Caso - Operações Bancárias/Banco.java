@@ -24,16 +24,16 @@ public class Banco {
 
     public void debitar(String nome_correntista, double valor) {
         Debito d = new Debito(valor);
-        getCorrentista(nome_correntista).getContaCorrente().executarOperacao(d);
+        getCorrentista(nome_correntista).getConta().executarOperacao(d);
     }
 
     public void creditar(String nome_correntista, double valor) {
         Credito c = new Credito(valor);
-        getCorrentista(nome_correntista).getContaCorrente().executarOperacao(c);
+        getCorrentista(nome_correntista).getConta().executarOperacao(c);
     }
 
     public double getSaldo(String nome_correntista) {
-        return getCorrentista(nome_correntista).getContaCorrente().getSaldoAtual();
+        return getCorrentista(nome_correntista).getConta().getSaldo();
     }
 
     public void transferir(String nome_correntista_origem, String nome_correntista_destino, double valor) {
