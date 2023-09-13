@@ -26,8 +26,6 @@ public class Funcionario {
         
         this.matricula = geraMatricula;
         geraMatricula++;
-
-
     }
 
     public void calculaSalario () {

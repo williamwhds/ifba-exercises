@@ -1,6 +1,6 @@
 public class Debito extends Operacao {
     public Debito(double valor) {
-        super.setValor(valor);
+        super(valor);
     }
 
     @Override

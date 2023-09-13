@@ -6,12 +6,12 @@ public class Correntista {
         this.nome = nome;
         this.conta = conta;
     }
-
-    public ContaCorrente getContaCorrente () {
-        return this.conta;
-    }
     
-    public String getNome () {
-        return this.nome;
+    public ContaCorrente getConta() {
+        return conta;
+    }
+
+    public String getNome() {
+        return nome;
     }
 }
