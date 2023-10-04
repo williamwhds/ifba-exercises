@@ -33,5 +33,3 @@ Quando um 'catch' é disparado, este lança uma exceção e essa é tratada dent
 8.
 
 Quando uma exceção é disparada durante um bloco 'try', este deixa de ser executado e o controle executa o tratador catch apropiado. Se uma variável local é criada dentro de um bloco try, esta não poderá ser acessada fora dele.
-
-
