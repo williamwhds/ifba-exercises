@@ -1,0 +1,35 @@
+1.
+
+Exceção de Input e Output (IOException)
+Objeto de valor nulo (NullPointerException)
+Posição inexistente em uma array (ArrayIndexOutOfBoundsException)
+Operação matemática inválida (ArithmeticException)
+Tentativa de acesso de método privado ou inexistente (NoSuchMethodException)
+
+2.
+
+Pois o tratamento só deve ser feito onde é possível que haja uma exceção. O uso excessivo de 'try-catch' pode deixar o código menos legível além de dificultar a manutenção.
+
+3.
+
+O controle executa o resto do código normalmente. Se o bloco 'finally' existir, este também será executado, independente de uma exceção ter sido disparada ou não.
+
+4.
+
+Se não houver um bloco 'catch', o programa será encerrado.
+
+5.
+
+É possível utilizar 'catch' com vários tratamentos de exceções. O Java vai retornar o tratamento que mais corresponde à exceção.
+
+6.
+
+Blocos 'finally' são executados independente de uma execução ter sido disparada ou não. São úteis para fechar leitores/escritores de arquivos ou conexões de banco de dados.
+
+7.
+
+Quando um 'catch' é disparado, este lança uma exceção e essa é tratada dentro do bloco 'catch'.
+
+8.
+
+Quando uma exceção é disparada durante um bloco 'try', este deixa de ser executado e o controle executa o tratador catch apropiado. Se uma variável local é criada dentro de um bloco try, esta não poderá ser acessada fora dele.
