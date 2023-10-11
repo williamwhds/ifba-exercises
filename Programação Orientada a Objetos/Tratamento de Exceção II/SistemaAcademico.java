@@ -2,17 +2,15 @@ public class SistemaAcademico {
     private static ProfessorIFBA[] professores = new ProfessorIFBA[20];
 
     public ProfessorIFBA buscarProfessor (String cpf) {
-        try {
-            for (int i = 0; i < professores.length; i++) {
-                if (professores[i].getCpf().equals(cpf)) {
-                    return professores[i];
-                }
+        for (int i = 0; i < professores.length; i++) {
+            if (professores[i] == null) {
+                continue;
             }
-            throw new ProfessorInexistenteException(cpf);
-        } catch (ProfessorInexistenteException e) {
-            System.out.println(e.getMessage());
-            return null;
+            if (professores[i].getCpf().equals(cpf)) {
+                return professores[i];
+            }
         }
+        return null;
     }
     
     public void registrarProfessor (ProfessorIFBA professor) {
@@ -53,5 +51,17 @@ public class SistemaAcademico {
         } catch (ProfessorInexistenteException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public String pesquisarProfessorIFBA (String cpf) {
+        try {
+            if (buscarProfessor(cpf) == null) {
+                throw new ProfessorInexistenteException(cpf);
+            }
+            return buscarProfessor(cpf).getInformacoes();
+        } catch (ProfessorInexistenteException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 }
