@@ -1,0 +1,40 @@
+Crie, utilizando o Mermaid, um diagrama de classes para o design abaixo. Como entrega, envie o código do Mermaid que gera o diagrama.
+
+O design abaixo não está completo, existem lacunas nele. Por exemplo, não há a definição de tipos para os atributos ou para os retornos dos métodos; também não há a definição de parâmetros. Assim, enquanto desenha o diagrama, tente preencher essas lacunas da maneira que achar pertinente de modo que a representação do sistema fique mais fácil de ser implementada em código.
+
+
+Sistema para Bibliotecas
+
+
+Interface "Emprestimo"
+método: emprestar()
+método: devolver()
+
+Classe Abstrata "ItemBiblioteca"
+atributo: titulo (visibilidade privada)
+atributo: anoDePublicacao (visibilidade protegida)
+método: consultarTitulo() (visibilidade pública): retorna titulo
+método abstrato: localizarItem() (visibilidade pública)
+
+Classe Concreta "Livro" (herda e ItemBiblioteca e implementa Emprestimo)
+atributo: autor (visibilidade privada)
+atributo: ISBN (visibilidade privada)
+método: emprestar() (implementação do método da interface Emprestimo)
+método: devolver() (implementação do método da interface Emprestimo)
+método: localizarItem() (implementação do método abstrato de ItemBiblioteca)
+
+Classe Concreta "Revista" (herda de ItemBiblioteca):
+atributo: edicao (visibilidade privada)
+método: localizarItem() (implementação do método abstrato de ItemBiblioteca)
+
+Classe Concreta "Usuario"
+atributo: nome (visibilidade privada)
+atributo: idUsuario (visibilidade privada)
+método: registrar() (visibilidade pública)
+método: solicitarEmprestimo() (visibilidade pública): depende da interface Emprestimo
+
+Classe Concreta "Biblioteca"
+atributo: nome (visibilidade privada)
+atributo: itensBiblioteca (visibilidade privada); uma lista que pode conter objetos de Livro e Revista
+método: adicionarItem() (visibilidade pública)
+método: removerItem() (visibilidade pública)

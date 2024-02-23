@@ -1,0 +1,13 @@
+// Typescript
+Instalar Node.js;
+Instalar o Typescript e ts-node globalmente com "npm install -g typescript ts-node" ;
+Usar o ts-node para executar o código sem precisar compilar com "ts-node arquivo.ts".
+
+// UML
+Instalar a extensão Markdown Preview Mermaid Support de Matt Bierner;
+Criar um arquivo .md;
+
+Escrever 
+    ```mermaid
+    %% Código mermaid.js
+    ```
