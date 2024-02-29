@@ -1,7 +1,8 @@
 // Typescript
 Instalar Node.js;
 Instalar o Typescript e ts-node globalmente com "npm install -g typescript ts-node" ;
-Usar o ts-node para executar o código sem precisar compilar com "ts-node arquivo.ts".
+Usar o ts-node para executar o código sem precisar compilar com "ts-node arquivo.ts";
+Também é possível compilar para JS com "tsc arquivo.ts".
 
 // UML
 Instalar a extensão Markdown Preview Mermaid Support de Matt Bierner;
